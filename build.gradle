@@ -4,9 +4,9 @@ plugins {
 }
 
 repositories {
-    jcenter()
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    google()
 }
-
 dependencies {
     implementation 'com.google.guava:guava:28.0-jre'
     testImplementation 'junit:junit:4.12'
