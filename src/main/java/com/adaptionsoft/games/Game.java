@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class Game {
     ArrayList players = new ArrayList();
-    ArrayList<Player> temp_players = new ArrayList<>();
+    ArrayList<Player> tempPlayers = new ArrayList<>();
     int[] places = new int[6];
     int[] goldCoins = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
@@ -33,20 +33,19 @@ public class Game {
 
     public boolean add(String playerName) {
 
-
         players.add(playerName);
-        temp_players.add(new Player(playerName));
+        tempPlayers.add(new Player(playerName));
         places[howManyPlayers()] = 0;
         goldCoins[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
-        System.out.println("They are player number " + players.size());
+        System.out.println("They are player number " + tempPlayers.size());
         return true;
     }
 
     public int howManyPlayers() {
-        return players.size();
+        return tempPlayers.size();
     }
 
     public void roll(int roll) {
@@ -118,7 +117,7 @@ public class Game {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                if (currentPlayer == tempPlayers.size()) currentPlayer = 0;
                 goldCoins[currentPlayer]++;
                 System.out.println(players.get(currentPlayer)
                         + " now has "
@@ -128,11 +127,9 @@ public class Game {
                 return didPlayerWin();
             } else {
                 currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
+                if (currentPlayer == tempPlayers.size()) currentPlayer = 0;
                 return true;
             }
-
-
         } else {
             System.out.println("Answer was correct!!!!");
             goldCoins[currentPlayer]++;
@@ -143,7 +140,7 @@ public class Game {
 
             boolean winner = didPlayerWin();
             currentPlayer++;
-            if (currentPlayer == players.size()) currentPlayer = 0;
+            if (currentPlayer == tempPlayers.size()) currentPlayer = 0;
 
             return winner;
         }
@@ -159,7 +156,7 @@ public class Game {
         inPenaltyBox[currentPlayer] = true;
 
         currentPlayer++;
-        if (currentPlayer == players.size()) currentPlayer = 0;
+        if (currentPlayer == tempPlayers.size()) currentPlayer = 0;
         return true;
     }
 
