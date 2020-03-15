@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
-    ArrayList players = new ArrayList();
     ArrayList<Player> tempPlayers = new ArrayList<>();
     int[] places = new int[6];
     int[] goldCoins = new int[6];
