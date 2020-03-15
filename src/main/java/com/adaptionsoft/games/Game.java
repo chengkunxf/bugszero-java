@@ -122,6 +122,7 @@ public class Game {
                 currentPlayerIndex++;
                 if (currentPlayerIndex == players.size()) currentPlayerIndex = 0;
                 goldCoins[currentPlayerIndex]++;
+                players.get(currentPlayerIndex).increaseGoldCoin();
                 System.out.println(getCurrentPlayerName()
                         + " now has "
                         + getCurrentGoldCoins()
@@ -136,6 +137,7 @@ public class Game {
         } else {
             System.out.println("Answer was correct!!!!");
             goldCoins[currentPlayerIndex]++;
+            players.get(currentPlayerIndex).increaseGoldCoin();
             System.out.println(getCurrentPlayerName()
                     + " now has "
                     + getCurrentGoldCoins()
