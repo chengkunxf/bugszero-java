@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Game {
-    ArrayList<Player> tempPlayers = new ArrayList<>();
+    ArrayList<Player> players = new ArrayList<>();
     int[] places = new int[6];
     int[] goldCoins = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
@@ -32,18 +32,18 @@ public class Game {
 
     public boolean add(String playerName) {
 
-        tempPlayers.add(new Player(playerName));
+        players.add(new Player(playerName));
         places[howManyPlayers()] = 0;
         goldCoins[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
-        System.out.println("They are player number " + tempPlayers.size());
+        System.out.println("They are player number " + players.size());
         return true;
     }
 
     public int howManyPlayers() {
-        return tempPlayers.size();
+        return players.size();
     }
 
     public void roll(int roll) {
@@ -67,7 +67,7 @@ public class Game {
     }
 
     private Object getCurrentPlayerName() {
-        return tempPlayers.get(currentPlayerIndex).getName();
+        return players.get(currentPlayerIndex).getName();
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {
@@ -119,7 +119,7 @@ public class Game {
             if (isGettingOutOfPenaltyBox) {
                 System.out.println("Answer was correct!!!!");
                 currentPlayerIndex++;
-                if (currentPlayerIndex == tempPlayers.size()) currentPlayerIndex = 0;
+                if (currentPlayerIndex == players.size()) currentPlayerIndex = 0;
                 goldCoins[currentPlayerIndex]++;
                 System.out.println(getCurrentPlayerName()
                         + " now has "
@@ -129,7 +129,7 @@ public class Game {
                 return didPlayerWin();
             } else {
                 currentPlayerIndex++;
-                if (currentPlayerIndex == tempPlayers.size()) currentPlayerIndex = 0;
+                if (currentPlayerIndex == players.size()) currentPlayerIndex = 0;
                 return true;
             }
         } else {
@@ -142,7 +142,7 @@ public class Game {
 
             boolean winner = didPlayerWin();
             currentPlayerIndex++;
-            if (currentPlayerIndex == tempPlayers.size()) currentPlayerIndex = 0;
+            if (currentPlayerIndex == players.size()) currentPlayerIndex = 0;
 
             return winner;
         }
@@ -158,7 +158,7 @@ public class Game {
         inPenaltyBox[currentPlayerIndex] = true;
 
         currentPlayerIndex++;
-        if (currentPlayerIndex == tempPlayers.size()) currentPlayerIndex = 0;
+        if (currentPlayerIndex == players.size()) currentPlayerIndex = 0;
         return true;
     }
 
