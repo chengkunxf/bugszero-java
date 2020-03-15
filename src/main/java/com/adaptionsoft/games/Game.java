@@ -30,10 +30,6 @@ public class Game {
         return "Rock Question " + index;
     }
 
-    public boolean isPlayable() {
-        return (howManyPlayers() >= 2);
-    }
-
     public boolean add(String playerName) {
 
 
@@ -67,10 +63,8 @@ public class Game {
             }
 
         } else {
-
             movePlayerAndAskQuestion(roll);
         }
-
     }
 
     private void movePlayerAndAskQuestion(int roll) {
@@ -121,9 +115,7 @@ public class Game {
                         + purses[currentPlayer]
                         + " Gold Coins.");
 
-                boolean winner = didPlayerWin();
-
-                return winner;
+                return didPlayerWin();
             } else {
                 currentPlayer++;
                 if (currentPlayer == players.size()) currentPlayer = 0;
