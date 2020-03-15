@@ -3,7 +3,7 @@ package com.adaptionsoft.games;
 public class Player {
 
     private final String name;
-    private final int goldCoins = 0;
+    private int goldCoins = 0;
 
     public Player(String playerName) {
         this.name = playerName;
@@ -13,7 +13,7 @@ public class Player {
         return name;
     }
 
-    public int getGoldCoins() {
-        return goldCoins;
+    public void increaseGoldCoin() {
+        goldCoins += 1;
     }
 }

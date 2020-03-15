@@ -35,6 +35,7 @@ public class Game {
         players.add(new Player(playerName));
         places[howManyPlayers()] = 0;
         goldCoins[howManyPlayers()] = 0;
+        players.get(currentPlayerIndex).increaseGoldCoin();
         inPenaltyBox[howManyPlayers()] = false;
 
         System.out.println(playerName + " was added");
