@@ -69,7 +69,7 @@ public class Game {
     }
 
     private Object getCurrentPlayerName() {
-        return players.get(currentPlayerIndex);
+        return tempPlayers.get(currentPlayerIndex).getName();
     }
 
     private boolean isCurrentPlayerInPenaltyBox() {
