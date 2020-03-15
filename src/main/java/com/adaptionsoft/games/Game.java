@@ -6,7 +6,6 @@ import java.util.LinkedList;
 public class Game {
     private final ArrayList<Player> players = new ArrayList<>();
     int[] places = new int[6];
-    int[] goldCoins = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
     LinkedList popQuestions = new LinkedList();
@@ -34,7 +33,6 @@ public class Game {
 
         players.add(new Player(playerName));
         places[howManyPlayers()] = 0;
-        goldCoins[howManyPlayers()] = 0;
         players.get(currentPlayerIndex).increaseGoldCoin();
         inPenaltyBox[howManyPlayers()] = false;
 
