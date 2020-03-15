@@ -152,7 +152,7 @@ public class Game {
     }
 
     private int getCurrentGoldCoins() {
-        return goldCoins[currentPlayerIndex];
+        return players.get(currentPlayerIndex).getGoldCoins();
     }
 
     public boolean wrongAnswer() {
