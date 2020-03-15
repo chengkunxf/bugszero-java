@@ -2,7 +2,8 @@ package com.adaptionsoft.games;
 
 public class Player {
 
-    private String name;
+    private final String name;
+    private final int goldCoins = 0;
 
     public Player(String playerName) {
         this.name = playerName;
@@ -10,5 +11,9 @@ public class Player {
 
     public String getName() {
         return name;
+    }
+
+    public int getGoldCoins() {
+        return goldCoins;
     }
 }
