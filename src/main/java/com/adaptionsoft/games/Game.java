@@ -33,7 +33,6 @@ public class Game {
 
     public boolean add(String playerName) {
 
-        players.add(playerName);
         tempPlayers.add(new Player(playerName));
         places[howManyPlayers()] = 0;
         goldCoins[howManyPlayers()] = 0;
