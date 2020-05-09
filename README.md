@@ -47,7 +47,11 @@ cd java
 JavaScript：
 --
 git clone git@github.com:linesh-simplicity/BugsZero-Kata.git
+
 git checkout master
+
 cd BugsZero-Kata/javascript
+
 npm i
+
 npm test
